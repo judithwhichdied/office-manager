@@ -1,0 +1,74 @@
+{
+    "name": "Input",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "98ba9a50-c5c0-4c84-9d31-484b008eceb3",
+            "actions": [
+                {
+                    "name": "TapT",
+                    "type": "Button",
+                    "id": "d6b2d829-3187-4f55-9500-ac4b504b11a0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouseClick",
+                    "type": "Button",
+                    "id": "6e7b0d00-01cb-4ba8-9e27-08136d09c273",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Rotation",
+                    "type": "Button",
+                    "id": "94fc89d9-83a2-4fe1-a3ce-77a900d9911b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "46394397-bca1-4c37-b299-698f8394dad3",
+                    "path": "<Keyboard>/t",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TapT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e316c6ff-a964-428d-94ce-d1750bc0b3fa",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0db3c1cc-14cd-43a9-b6ff-e2d6cfb8187c",
+                    "path": "<Keyboard>/r",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
