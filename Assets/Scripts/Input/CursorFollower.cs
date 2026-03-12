@@ -30,7 +30,7 @@ public class CursorFollower : MonoBehaviour
         StartCoroutine(StartFollowing(desk));
     }
 
-    private void StopFollowing(Vector3 _)
+    private void StopFollowing(Cell _)
     {
         _canFollow = false;
     }
@@ -60,7 +60,7 @@ public class CursorFollower : MonoBehaviour
 
                 if (hit.collider.gameObject.TryGetComponent(out Cell cell))
                 {
-                    if (cell.IsOccupied)
+                    if (cell.Occupied)
                         cell.SetColor(_occupied);
                     else
                         cell.SetColor(_free);

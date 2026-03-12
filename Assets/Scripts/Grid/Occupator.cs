@@ -48,7 +48,7 @@ public class Occupator : MonoBehaviour
                 if (neighborX >= 0 && neighborX < grid.GetLength(0) &&
                     neighborY >= 0 && neighborY < grid.GetLength(1))
                 {
-                    if (grid[neighborX, neighborY].IsOccupied)
+                    if (grid[neighborX, neighborY].Occupied)
                     {
                         return true;
                     }
@@ -61,7 +61,7 @@ public class Occupator : MonoBehaviour
 
     private bool TryOccupy(Cell cell)
     {
-        if (cell.IsOccupied)
+        if (cell.Occupied)
             return false;
 
         return true;

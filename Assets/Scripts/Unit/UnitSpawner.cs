@@ -28,17 +28,18 @@ public class UnitSpawner : MonoBehaviour
 
     private void OnGet(UnitMover unit)
     {
-        unit.transform.position = _spawnPoint.position;
-        unit.GetComponent<NavMeshAgent>().enabled = true;
+        unit.gameObject.SetActive(true);
     }
 
     private void OnRelease(UnitMover unit)
     {
-
+        unit.gameObject?.SetActive(false);
     }
 
-    public UnitMover Spawn()
+    public UnitMover Spawn(Cell startCell)
     {
-        return _pool.Get();
+        UnitMover unit = _pool.Get();
+        unit.transform.position = startCell.transform.position; 
+        return unit;
     }
 }

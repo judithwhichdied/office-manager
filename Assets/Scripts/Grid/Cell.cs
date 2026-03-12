@@ -5,9 +5,15 @@ public class Cell : MonoBehaviour
 {
     private MeshRenderer _renderer;
 
+    private int _gridX;
+    private int _gridY; 
+
     private bool _isOccupied = false;
 
-    public bool IsOccupied { get { return _isOccupied; } }
+    public int GridX => _gridX;
+    public int GridY => _gridY;
+
+    public bool Occupied => _isOccupied;
 
     private void Awake()
     {
@@ -23,5 +29,11 @@ public class Cell : MonoBehaviour
     public void SetColor(Color color)
     {
         _renderer.material.color = color;
+    }
+
+    public void SetGridPosition(int gridX, int gridY)
+    {
+        _gridX = gridX;
+        _gridY = gridY;
     }
 }

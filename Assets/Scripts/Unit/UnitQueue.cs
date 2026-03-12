@@ -8,23 +8,16 @@ public class UnitQueue : MonoBehaviour
 
     private Queue<UnitMover> _queue;
 
-    private int _unitCount = 5;
-
     private void Awake()
     {
         _queue = new Queue<UnitMover>();
     }
 
-    private void Start()
+    public void CreateQueue(int unitCount, Cell startCell)
     {
-        CreateQueue();
-    }
-
-    private void CreateQueue()
-    {
-        for (int i = 0; i < _unitCount; i++)
+        for (int i = 0; i < unitCount; i++)
         {
-            _queue.Enqueue(_spawner.Spawn());
+            _queue.Enqueue(_spawner.Spawn(startCell));
         }
     }
 

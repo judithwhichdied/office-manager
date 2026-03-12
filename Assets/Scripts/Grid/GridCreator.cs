@@ -1,11 +1,13 @@
-using Unity.AI.Navigation;
 using UnityEngine;
 
 public class GridCreator : MonoBehaviour
 {
     [SerializeField] private Cell _prefab;
     [SerializeField] private Occupator _occupator;
-    [SerializeField] private NavMeshSurface _surface;
+    [SerializeField] private UnitManager _unitManager;
+
+    private PathFinder _pathFinder;
+    private StartCellRandomizer _randomizer;
 
     private Vector3 _startPosition = new Vector3(-7, 0, 7);
 
@@ -19,7 +21,10 @@ public class GridCreator : MonoBehaviour
     {
         Create();
         _occupator.OccupyCells(_grid);
-        _surface.BuildNavMesh();
+
+        _pathFinder = new PathFinder(_grid);
+        _randomizer = new StartCellRandomizer(_grid);
+        _unitManager.Initialize(_pathFinder, _randomizer);
     }
 
     private void Create()
@@ -41,7 +46,11 @@ public class GridCreator : MonoBehaviour
                 cell = Instantiate(_prefab, transform.position, Quaternion.identity);
 
                 _grid[i, j] = cell;
+
+                cell.SetGridPosition(i, j);
             }
         }
     }
+
+    public Cell[,] GetGrid() { return _grid; }
 }
